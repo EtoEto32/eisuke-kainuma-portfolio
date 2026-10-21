@@ -1,0 +1,318 @@
+/* Monochrome surfaces and restrained motion. */
+body {
+  background-color: #fcfcfc;
+  background-image: radial-gradient(#0000000c 0.65px, transparent 0.65px);
+  background-size: 8px 8px;
+}
+.site-header {
+  background: #ffffffdf;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 3px 18px #00000004;
+}
+.desktop-nav a {
+  position: relative;
+  border-bottom-color: transparent;
+  transition: color 0.2s;
+}
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  height: 2px;
+  width: 100%;
+  background: #111;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.desktop-nav a.active {
+  border-color: transparent;
+}
+.desktop-nav a.active::after,
+.desktop-nav a:hover::after,
+.desktop-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+.wordmark .brand-name {
+  transition: letter-spacing 0.25s;
+}
+.wordmark:hover .brand-name {
+  letter-spacing: -0.015em;
+}
+.route-main {
+  animation: page-enter 0.45s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+.profile-heading,
+.focus-page-heading h1,
+.activity-section > h1 {
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+.profile-heading::before,
+.focus-page-heading h1::before {
+  content: '';
+  display: block;
+  width: 38px;
+  height: 4px;
+  background: #171717;
+  margin-bottom: 20px;
+}
+.profile-photo {
+  position: relative;
+  border-radius: 16px;
+  box-shadow:
+    10px 10px 0 #eaeaea,
+    0 12px 28px #00000008;
+}
+.profile-photo img {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  max-width: none;
+  left: -25%;
+  top: -6%;
+  object-fit: cover;
+  object-position: center top;
+}
+.photo-placeholder {
+  background: linear-gradient(135deg, #fafafa, #e9e9e9);
+}
+.photo-placeholder > span {
+  background: #ffffff;
+  box-shadow: 0 6px 24px #0000000a;
+}
+.about-content .featured-skills {
+  background: linear-gradient(130deg, #242424, #111111);
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 14px 35px #00000016;
+  position: relative;
+  overflow: hidden;
+}
+.featured-skills::after {
+  content: '';
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  right: -90px;
+  top: -95px;
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 25px #ffffff05,
+    0 0 0 50px #ffffff03;
+  pointer-events: none;
+}
+.about-content .featured-skills .skill-heading {
+  color: #e5e5e5;
+  font-size: 17px;
+}
+.about-content .featured-skills .skill-tags {
+  margin: 0;
+}
+.about-content .featured-skills .skill-tags > .badge {
+  background: #ffffff12;
+  color: #fff;
+  border: 1px solid #ffffff30;
+  border-radius: 6px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.featured-skills .skill-tags > .badge:hover {
+  background: #ffffff25;
+  border-color: #ffffff66;
+}
+.profile-list > li {
+  border-color: #dedede;
+}
+.profile-list > li strong {
+  color: #555;
+}
+.goals-section {
+  position: relative;
+  background: radial-gradient(ellipse at 90% 0, #333333, transparent 55%), #151515;
+}
+.ambitions-grid {
+  position: relative;
+}
+.ambitions-grid article {
+  padding: 25px;
+  background: #ffffff06;
+  border: 1px solid #ffffff24;
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 #ffffff08;
+}
+.ambitions-grid h3 {
+  line-height: 1.6;
+}
+.ambitions-grid p {
+  margin-bottom: 0;
+}
+.focus-grid article {
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 20px #00000005;
+}
+.focus-grid h3 {
+  font-size: 22px;
+}
+.focus-grid p {
+  color: #444;
+}
+.event-list {
+  border: 1px solid #dedede;
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 30px #00000005;
+}
+.event-list-header {
+  background: #f0f0f0;
+  padding-block: 17px;
+}
+.event-disclosure:last-child {
+  border-bottom: 0;
+}
+.event-summary {
+  transition: background 0.2s;
+}
+.event-disclosure[open] > .event-summary {
+  background: #f0f0f0;
+}
+.event-chevron {
+  transition: transform 0.25s ease;
+}
+.event-disclosure[open] .event-detail {
+  animation: detail-enter 0.25s ease both;
+}
+.event-detail {
+  background: #fff;
+}
+.event-summary-result {
+  font-variant-numeric: tabular-nums;
+}
+.works-empty {
+  background: #ffffffd9;
+  border-style: solid;
+  border-color: #ddd;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px #00000005;
+}
+.works-empty > svg {
+  color: #222;
+}
+.contact-section {
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #eeeeee);
+  box-shadow: 0 12px 30px #00000008;
+}
+.social-links > a {
+  border-radius: 5px;
+  padding: 12px 8px;
+  transition: background 0.2s;
+}
+.social-links > a:hover {
+  background: #ffffffb0;
+}
+.btn {
+  border-radius: 7px;
+}
+.mobile-nav {
+  animation: detail-enter 0.2s ease both;
+  box-shadow: 0 14px 25px #0000000a;
+}
+.ambitions-grid article,
+.focus-grid article {
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+@media (hover: hover) {
+  .ambitions-grid article:hover {
+    transform: translateY(-4px);
+    border-color: #ffffff66;
+    box-shadow: 0 12px 28px #00000022;
+  }
+  .focus-grid article:hover {
+    transform: translateY(-4px);
+    border-color: #aaa;
+    box-shadow: 0 12px 28px #0000000d;
+  }
+}
+.reveal-pending {
+  opacity: 0;
+  translate: 0 14px;
+}
+.reveal-pending.is-revealed {
+  animation: reveal-enter 0.5s cubic-bezier(0.2, 0.65, 0.3, 1) var(--reveal-delay, 0ms) both;
+}
+/* Focused content always stays visible, including keyboard-opened disclosures. */
+.reveal-pending:focus-within {
+  opacity: 1;
+  translate: none;
+}
+@keyframes page-enter {
+  from {
+    opacity: 0.2;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes reveal-enter {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+@keyframes detail-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 700px) {
+  .about-content .featured-skills {
+    padding: 22px;
+  }
+  .ambitions-grid article {
+    padding: 23px;
+  }
+  .profile-photo {
+    box-shadow: 7px 7px 0 #eaeaea;
+  }
+  .event-list {
+    border-radius: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-pending,
+  .reveal-pending.is-revealed {
+    opacity: 1;
+    transform: none;
+    translate: none;
+  }
+}

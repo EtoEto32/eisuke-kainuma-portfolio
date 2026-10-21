@@ -67,3 +67,12 @@ Prettierの設定は `.prettierrc.json` にあります。生成物、依存パ�
 `/`（プロフィール・スキル）、`/works`、`/research`、`/activity`、`/contact`。旧 `/skills` は `/`、旧 `/goals` は `/research` に転送します。
 
 本番公開時は各URLへの直接アクセスを `index.html` に戻すSPAフォールバック設定が必要です。Viteの開発サーバーは自動で対応します。
+
+## GitHubの自動チェック
+
+- Dependabot: npmの脆弱性修正PRを自動作成します。通常のnpmバージョン更新PRは作成しません。GitHub Actionsは毎週月曜09:00（日本時間）に更新を確認し、まとめてPRを作成します。自動マージは設定していません。
+- CI: mainへのpushとPRで、ロックファイルからのインストール、整形チェック、型チェック、本番ビルド、依存パッケージの監査を実行します。既知の脆弱性がmoderate以上なら失敗にします。
+- CodeQL: TypeScript/JavaScriptとGitHub Actionsのソースを、push・PR・週次で解析します。結果はGitHubのSecurityタブで確認できます。
+- Dependency review: PRで新しく導入される依存関係にmoderate以上の既知の脆弱性がないか確認します。ライセンス審査とPRへの自動コメントは行いません。
+
+ワークフローは `.github/workflows/`、更新設定は `.github/dependabot.yml` にあります。公式ActionsをコミットSHAで固定し、必要なジョブだけに書き込み権限を与えています。公開サイトのデプロイは行いません。

@@ -10,6 +10,7 @@ import './styles/monochrome.css'
 import './styles/enhancements.css'
 import './styles/futuristic.css'
 import './styles/interface.css'
+import './styles/pointer.css'
 
 const App = lazy(async () => {
   const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 800

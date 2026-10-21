@@ -1,0 +1,96 @@
+/* Native cursors retain their hotspot and a standard fallback. */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor:
+      url('/cursor.svg') 3 2,
+      auto;
+  }
+
+  :root a[href],
+  :root button:not(:disabled),
+  :root summary,
+  :root [role='button'] {
+    cursor:
+      url('/cursor-link.svg') 16 16,
+      pointer;
+  }
+
+  input,
+  textarea,
+  [contenteditable='true'] {
+    cursor: text;
+  }
+
+  button:disabled,
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+.pointer-ring {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transition: opacity 0.15s;
+}
+
+.pointer-ring > span {
+  display: block;
+  width: 34px;
+  height: 34px;
+  translate: -50% -50%;
+  border: 1px solid #ffffff99;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #ffffff09;
+  transition:
+    scale 0.2s,
+    border-color 0.2s,
+    rotate 0.2s,
+    border-radius 0.2s;
+}
+
+.pointer-ring[data-interactive='true'] > span {
+  scale: 1.4;
+  rotate: 45deg;
+  border-radius: 6px;
+  border-color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .pointer-ring {
+    display: block;
+  }
+
+  .pointer-ring[data-visible='true'] {
+    opacity: 1;
+  }
+
+  .pointer-moving .route-main {
+    background-image:
+      radial-gradient(
+        450px circle at var(--pointer-x, 50%) var(--pointer-y, 30%),
+        #a9a9a944,
+        transparent 72%
+      ),
+      radial-gradient(ellipse at 70% 0, #e5e5e5aa, transparent 55%),
+      linear-gradient(#00000006 1px, transparent 1px),
+      linear-gradient(90deg, #00000006 1px, transparent 1px);
+    background-size:
+      auto,
+      100% 700px,
+      56px 56px,
+      56px 56px;
+    background-attachment: fixed;
+    background-repeat: no-repeat, no-repeat, repeat, repeat;
+  }
+
+  .pointer-moving .interface-art {
+    translate: var(--parallax-x, 0) var(--parallax-y, 0);
+    transition: translate 0.25s ease-out;
+  }
+}

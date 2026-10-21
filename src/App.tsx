@@ -6,6 +6,7 @@ import { usePageReveal } from './usePageReveal'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import CircuitArtwork from './components/CircuitArtwork'
+import PointerEffects from './components/PointerEffects'
 import ProfilePage from './pages/ProfilePage'
 import ProjectsPage from './pages/ProjectsPage'
 import ResearchPage from './pages/ResearchPage'
@@ -26,6 +27,7 @@ export default function App() {
   }, [pathname])
   return (
     <>
+      <PointerEffects />
       <a className="skip-link" href="#main">
         本文へスキップ
       </a>

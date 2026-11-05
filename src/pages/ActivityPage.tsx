@@ -114,7 +114,9 @@ export default function ActivityPage() {
                 <h3>{activity.title}</h3>
                 <p>{activity.description}</p>
               </div>
-              <span className="badge sample-badge">{activity.status}</span>
+              <ExternalLink href={activity.url} className="badge sample-badge">
+                Qiitaの記事を読む
+              </ExternalLink>
             </article>
           ))}
         </div>

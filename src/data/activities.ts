@@ -25,9 +25,9 @@ export const publications = [
 export const activities = [
   {
     label: 'WRITING',
-    title: 'Zenn・ブログでの執筆',
-    description: 'Zennやブログで公開した記事を紹介します。',
-    status: '準備中',
+    title: 'Qiitaでの執筆',
+    description: '主にQiitaで技術記事を書いています。',
+    url: 'https://qiita.com/ettottooo',
   },
 ]
 export const eventHistory: EventRecord[] = [

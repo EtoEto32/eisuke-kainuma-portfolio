@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 
 /** Decorative only: native SVG cursors still work when JavaScript motion is off. */
 export default function PointerEffects() {
@@ -50,11 +51,23 @@ export default function PointerEffects() {
       if (frame === undefined) frame = requestAnimationFrame(update)
     }
 
+    function onScroll() {
+      if (!motion.matches || !root.classList.contains('pointer-moving')) return
+      // Scrolling can move a link under a stationary pointer.
+      interactive = Boolean(
+        document
+          .elementFromPoint(x, y)
+          ?.closest('a[href], button:not(:disabled), summary, [role="button"]'),
+      )
+      if (frame === undefined) frame = requestAnimationFrame(update)
+    }
+
     function onPreferenceChange() {
       hide()
     }
 
     window.addEventListener('pointermove', onMove, { passive: true })
+    window.addEventListener('scroll', onScroll, { passive: true, capture: true })
     window.addEventListener('blur', hide)
     document.documentElement.addEventListener('pointerleave', hide)
     document.addEventListener('visibilitychange', hide)
@@ -63,6 +76,7 @@ export default function PointerEffects() {
     return () => {
       hide()
       window.removeEventListener('pointermove', onMove)
+      window.removeEventListener('scroll', onScroll, { capture: true })
       window.removeEventListener('blur', hide)
       document.documentElement.removeEventListener('pointerleave', hide)
       document.removeEventListener('visibilitychange', hide)
@@ -73,9 +87,14 @@ export default function PointerEffects() {
     }
   }, [])
 
-  return (
-    <div className="pointer-ring" ref={ringRef} aria-hidden="true" data-visible="false">
-      <span />
-    </div>
+  // Keep viewport effects outside route animations and section stacking contexts.
+  return createPortal(
+    <>
+      <div className="pointer-glow" aria-hidden="true" />
+      <div className="pointer-ring" ref={ringRef} aria-hidden="true" data-visible="false">
+        <span />
+      </div>
+    </>,
+    document.body,
   )
 }

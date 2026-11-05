@@ -48,16 +48,20 @@
 }
 
 .pointer-ring {
-  left: 0;
-  top: 0;
+  inset: 0;
   z-index: 80;
+  overflow: clip;
 }
 
 .pointer-ring > span {
   display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 34px;
   height: 34px;
   translate: -50% -50%;
+  transform: translate3d(var(--pointer-x, 0), var(--pointer-y, 0), 0);
   border: 1px solid #ffffff99;
   border-radius: 50%;
   box-shadow: 0 0 0 5px #ffffff09;
@@ -84,6 +88,10 @@
   .pointer-moving .pointer-glow,
   .pointer-ring[data-visible='true'] {
     opacity: 1;
+  }
+
+  .pointer-moving .route-main {
+    overflow-x: clip;
   }
 
   .pointer-moving .interface-art {

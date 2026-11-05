@@ -31,7 +31,6 @@ export default function PointerEffects() {
       root.style.setProperty('--parallax-y', `${(y / window.innerHeight - 0.5) * 16}px`)
       root.classList.add('pointer-moving')
       if (ring) {
-        ring.style.transform = `translate3d(${x}px, ${y}px, 0)`
         ring.dataset.interactive = String(interactive)
         ring.dataset.visible = 'true'
       }

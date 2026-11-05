@@ -125,19 +125,14 @@ body {
   gap: 28px;
   position: relative;
 }
+.goals-section .section-heading h2,
 .goals-motto {
   margin: 0;
-  font-size: clamp(34px, 4.5vw, 62px);
-  line-height: 1.35;
-  font-weight: 750;
-  letter-spacing: -0.045em;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.035em;
   color: #ffffff;
-  white-space: nowrap;
-  text-shadow: 0 0 30px #ffffff20;
-}
-.goals-motto > span {
-  display: inline-block;
-  color: #d7d7d7;
 }
 .ambitions-grid article {
   position: relative;
@@ -233,11 +228,8 @@ footer {
   }
 }
 @media (max-width: 700px) {
+  .goals-section .section-heading h2,
   .goals-motto {
-    font-size: clamp(32px, 9vw, 44px);
-    white-space: normal;
-  }
-  .goals-section .section-heading h2 {
     font-size: 25px;
   }
   .profile-list {

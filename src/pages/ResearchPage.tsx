@@ -12,11 +12,7 @@ export default function ResearchPage() {
         id="goals"
         title="今後挑戦したいこと"
         items={ambitions}
-        aside={
-          <p className="goals-motto">
-            目標は高く<span>！</span>
-          </p>
-        }
+        aside={<p className="goals-motto">目標は高く！</p>}
       />
     </>
   )

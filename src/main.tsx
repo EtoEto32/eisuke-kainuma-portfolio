@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
-import PageLoader from './PageLoader'
+import PageLoader from './components/PageLoader'
 import { BrowserRouter } from 'react-router-dom'
-// Cascade order: base → typography → palette → motion → surfaces → final layout.
-// Preserve this order when adding styles; later files refine the existing design.
+// 基本設定、文字、配色、動き、装飾、レイアウトの順にスタイルを重ねます。
+// 後から読み込むファイルで上書きしているため、読み込み順を保ってください。
 import './styles/style.css'
 import './styles/readability.css'
 import './styles/monochrome.css'

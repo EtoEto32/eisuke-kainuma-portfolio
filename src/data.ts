@@ -1,4 +1,4 @@
-// Public entry point: callers do not need to know the data file layout.
+// 各ページで使うデータと型を、ここからまとめて読み込めます。
 export * from './data/profile'
 export * from './data/research'
 export * from './data/projects'

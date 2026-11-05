@@ -1,5 +1,5 @@
 import { currentFocus, ambitions } from '../data'
-import WorkPanel from '../WorkPanel'
+import WorkPanel from '../components/WorkPanel'
 
 export default function ResearchPage() {
   return (

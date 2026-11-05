@@ -1,6 +1,6 @@
 import { ArrowUpRight, Github } from 'lucide-react'
 import type { Project } from '../data'
-import ProjectArtwork from '../ProjectArtwork'
+import ProjectArtwork from './ProjectArtwork'
 import ExternalLink from './ExternalLink'
 
 type ProjectCardProps = { project: Project; onSelect: (project: Project) => void }

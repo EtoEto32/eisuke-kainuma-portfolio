@@ -2,7 +2,7 @@ import ExternalLink from './ExternalLink'
 import { useEffect, useRef } from 'react'
 import { ArrowUpRight, X } from 'lucide-react'
 import type { Project } from '../data'
-import ProjectArtwork from '../ProjectArtwork'
+import ProjectArtwork from './ProjectArtwork'
 
 export default function ProjectDialog({
   selected,

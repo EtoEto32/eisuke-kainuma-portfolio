@@ -1,11 +1,12 @@
-import type { EventRecord } from './types'
+import { contactLinks } from './contacts'
+import type { Conference, EventRecord, Publication, WritingActivity } from './types'
 
 export const conference = {
   title: '第115回コンピュータセキュリティ合同研究発表会（CSEC）',
   date: '2026年12月10日〜11日',
   venue: '下呂交流会館アクティブ（岐阜県下呂市）',
   url: 'https://www.ipsj.or.jp/kenkyukai/event/eip114spt65csec115.html',
-}
+} satisfies Conference
 
 export const publications = [
   {
@@ -20,16 +21,16 @@ export const publications = [
     authors: ['井藤大地', '向井宏明', '貝沼英亮'],
     role: '共著',
   },
-]
+] satisfies Publication[]
 
 export const activities = [
   {
     label: 'WRITING',
     title: 'Qiitaでの執筆',
     description: '主にQiitaで技術記事を書いています。',
-    url: 'https://qiita.com/ettottooo',
+    url: contactLinks.qiita,
   },
-]
+] satisfies WritingActivity[]
 export const eventHistory: EventRecord[] = [
   {
     title: '総務省 全国型CTFコンテスト',

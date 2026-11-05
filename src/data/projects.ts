@@ -1,6 +1,6 @@
 import type { Project } from './types'
 
-// 制作物を追加すると一覧とカテゴリの絞り込みが自動で表示されます。
+// 制作物を追加すると、一覧やカテゴリ別の表示に反映されます。
 export const projects: Project[] = [
   {
     id: 1,

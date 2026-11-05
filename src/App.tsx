@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import type { Category } from './data'
 import { navigation } from './navigation'
-import { usePageReveal } from './usePageReveal'
+import { usePageReveal } from './hooks/usePageReveal'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import CircuitArtwork from './components/CircuitArtwork'
@@ -16,13 +16,13 @@ import ContactPage from './pages/ContactPage'
 export default function App() {
   const { pathname } = useLocation()
   const mainRef = useRef<HTMLElement>(null)
-  // Keep the project filter when navigating away and back.
+  // ページを移動して戻ったときも、制作物の絞り込み条件を保持します。
   const [filter, setFilter] = useState<Category>('すべて')
   usePageReveal(pathname, mainRef)
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
     mainRef.current?.focus({ preventScroll: true })
-    const label = navigation.find(([, path]) => path === pathname)?.[0] ?? 'プロフィール'
+    const label = navigation.find((item) => item.path === pathname)?.label ?? 'プロフィール'
     document.title = label + ' | eisuke kainuma portfolio'
   }, [pathname])
   return (

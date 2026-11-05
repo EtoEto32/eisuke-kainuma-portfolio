@@ -1,7 +1,7 @@
 export const navigation = [
-  ['プロフィール', '/'],
-  ['制作物', '/works'],
-  ['現在の取り組み・今後挑戦したいこと', '/research'],
-  ['活動・実績', '/activity'],
-  ['連絡先', '/contact'],
+  { label: 'プロフィール', path: '/' },
+  { label: '制作物', path: '/works' },
+  { label: '現在の取り組み・今後挑戦したいこと', path: '/research' },
+  { label: '活動・実績', path: '/activity' },
+  { label: '連絡先', path: '/contact' },
 ] as const

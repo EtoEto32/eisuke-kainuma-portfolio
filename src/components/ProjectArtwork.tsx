@@ -1,7 +1,7 @@
 import { Check, Utensils, MapPin, Activity, Terminal, ArrowRight } from 'lucide-react'
-import type { Project } from './data'
+import type { Project } from '../data'
 
-/** Illustrations of the supplied concepts, rather than screenshots of the apps. */
+/** 制作物の用途を伝えるためのイメージ図を表示します。 */
 export default function ProjectArtwork({ type }: { type: Project['visual'] }) {
   return (
     <div className={`project-artwork artwork-${type}`} aria-hidden="true">

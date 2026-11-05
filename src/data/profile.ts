@@ -1,4 +1,4 @@
-// プロフィール・制作物・活動・リンクの情報はこのファイルで管理します。
+// プロフィール、資格・免許、スキルの掲載内容を管理します。
 export const profile = {
   name: '貝沼 英亮',
   englishName: 'eisuke kainuma',
@@ -14,7 +14,7 @@ export const profile = {
   mottoTranslation: '完璧を目指すよりまず終わらせろ',
   comment:
     'インターンで資料のまとめ方を指摘されたのをきっかけに、発表資料の作り方を現在勉強中です。',
-  photo: '/profile.png', // 表示範囲は src/styles/enhancements.css の .profile-photo img で調整します。
+  photo: '/profile.png', // 写真の表示範囲は .profile-photo img のスタイルで調整します。
   email: 'kainuma0904@gmail.com',
   researchTitle: 'WebAssemblyを用いたクリプトジャッキングマルウェアの研究',
   researchDescription: 'WebAssemblyを用いたクリプトジャッキングマルウェアについて研究しています。',

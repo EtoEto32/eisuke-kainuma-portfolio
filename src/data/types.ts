@@ -22,3 +22,30 @@ export type EventRecord = {
   topics?: string[]
   note?: string
 }
+
+export type Publication = {
+  id: string
+  title: string
+  authors: string[]
+  role: '筆頭著者' | '共著'
+}
+
+export type Conference = {
+  title: string
+  date: string
+  venue: string
+  url: string
+}
+
+export type ContactLink = {
+  name: string
+  detail: string
+  url: string
+}
+
+export type WritingActivity = {
+  label: string
+  title: string
+  description: string
+  url: string
+}

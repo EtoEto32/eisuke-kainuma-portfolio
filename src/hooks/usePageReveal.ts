@@ -1,16 +1,25 @@
 import { useEffect } from 'react'
 import type { RefObject } from 'react'
 
-/** Content remains visible if animation is disabled or unsupported. */
+const revealTargets = [
+  '.profile-list > li',
+  '.profile-comment',
+  '.project-card',
+  '.skill-group',
+  '.ambitions-grid > article',
+  '.focus-grid > article',
+  '.event-disclosure',
+  '.activity-list > article',
+  '.social-links > *',
+].join(', ')
+
+/** 動きを減らす設定や非対応のブラウザでは、内容をそのまま表示します。 */
 export function usePageReveal(pathname: string, root: RefObject<HTMLElement | null>) {
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
     if (reducedMotion.matches || !('IntersectionObserver' in window)) return
 
-    const elements =
-      root.current?.querySelectorAll<HTMLElement>(
-        '.profile-list > li, .profile-comment, .project-card, .skill-group, .ambitions-grid > article, .focus-grid > article, .event-disclosure, .activity-list > article, .social-links > *',
-      ) ?? []
+    const elements = root.current?.querySelectorAll<HTMLElement>(revealTargets) ?? []
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

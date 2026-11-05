@@ -13,7 +13,7 @@ export default function SiteHeader() {
       <div className="navbar page-width">
         <SiteBrand label="プロフィールへ" />
         <nav className="desktop-nav" aria-label="メインナビゲーション">
-          {navigation.map(([label, path]) => (
+          {navigation.map(({ label, path }) => (
             <NavLink key={path} to={path} end={path === '/'}>
               {label}
             </NavLink>
@@ -31,7 +31,7 @@ export default function SiteHeader() {
       </div>
       {menuOpen && (
         <nav id="mobile-nav" className="mobile-nav" aria-label="モバイルナビゲーション">
-          {navigation.map(([label, path]) => (
+          {navigation.map(({ label, path }) => (
             <NavLink key={path} to={path} end={path === '/'} onClick={() => setMenuOpen(false)}>
               {label}
               <ArrowUpRight size={18} />

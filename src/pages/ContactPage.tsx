@@ -1,5 +1,5 @@
 import ExternalLink from '../components/ExternalLink'
-import { useClipboard } from '../useClipboard'
+import { useClipboard } from '../hooks/useClipboard'
 import { ArrowUpRight, Github, Mail, Copy, Check } from 'lucide-react'
 import { profile, contacts } from '../data'
 
@@ -45,27 +45,16 @@ export default function ContactPage() {
             </div>
           )}
           <div className="social-links">
-            {contacts.map((contact) =>
-              contact.url ? (
-                <ExternalLink key={contact.name} href={contact.url}>
-                  <span>
-                    {contact.name === 'GitHub' && <Github size={15} />}
-                    <b>{contact.name}</b>
-                    <small>{contact.detail}</small>
-                  </span>
-                  <ArrowUpRight size={16} />
-                </ExternalLink>
-              ) : (
-                <div className="social-pending" key={contact.name}>
-                  <span>
-                    {contact.name === 'GitHub' && <Github size={15} />}
-                    <b>{contact.name}</b>
-                    <small>{contact.detail}</small>
-                  </span>
-                  <span>準備中</span>
-                </div>
-              ),
-            )}
+            {contacts.map((contact) => (
+              <ExternalLink key={contact.name} href={contact.url}>
+                <span>
+                  {contact.name === 'GitHub' && <Github size={15} />}
+                  <b>{contact.name}</b>
+                  <small>{contact.detail}</small>
+                </span>
+                <ArrowUpRight size={16} />
+              </ExternalLink>
+            ))}
           </div>
         </div>
       </div>

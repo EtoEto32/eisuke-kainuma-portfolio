@@ -1,4 +1,4 @@
-/* Monochrome surfaces and restrained motion. */
+/* 白黒の配色に合わせて、部品の背景と控えめな動きを設定します。 */
 body {
   background-color: #fcfcfc;
   background-image: radial-gradient(#0000000c 0.65px, transparent 0.65px);
@@ -252,7 +252,7 @@ body {
 .reveal-pending.is-revealed {
   animation: reveal-enter 0.5s cubic-bezier(0.2, 0.65, 0.3, 1) var(--reveal-delay, 0ms) both;
 }
-/* Focused content always stays visible, including keyboard-opened disclosures. */
+/* キーボード操作でフォーカスした内容は、アニメーションを待たずに表示します。 */
 .reveal-pending:focus-within {
   opacity: 1;
   translate: none;

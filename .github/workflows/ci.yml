@@ -33,7 +33,7 @@ jobs:
         run: npm ci
       - name: Check formatting
         run: npm run format:check
-      # The build script runs TypeScript checks before bundling.
+      # ビルドスクリプト内で、ファイルをまとめる前にTypeScriptの型を検査します。
       - name: Check types and build
         run: npm run build
       - name: Check for known dependency vulnerabilities

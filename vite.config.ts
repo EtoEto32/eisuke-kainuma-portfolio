@@ -8,7 +8,7 @@ export default defineConfig({
     host: 'localhost',
     port: 5173,
     strictPort: true,
-    // React Fast Refresh と CSS のホット更新を開発時に有効にします。
+    // 開発中はReact Fast RefreshとCSSのホット更新を利用します。
     hmr: true,
   },
 })

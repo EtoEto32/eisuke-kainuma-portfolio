@@ -1,4 +1,4 @@
-/* Native cursors retain their hotspot and a standard fallback. */
+/* 独自カーソルのクリック位置を指定し、読み込めない場合は標準カーソルを使います。 */
 @media (hover: hover) and (pointer: fine) {
   body {
     cursor:

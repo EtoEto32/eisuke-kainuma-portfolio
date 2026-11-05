@@ -1,4 +1,4 @@
-/* High-contrast chrome, full-width page surfaces, and adaptive layout. */
+/* コントラスト、ページ幅、画面サイズに応じた配置を調整します。 */
 .profile-comment {
   position: relative;
   padding: 26px 28px;
@@ -587,7 +587,7 @@ body {
 .contact-section.route-contact {
   width: min(1164px, calc(100% - 80px));
 }
-/* The outer footer paints edge to edge; only its contents have a max-width. */
+/* フッターの背景は画面幅いっぱいに広げ、中の内容だけに最大幅を設けます。 */
 footer.site-footer {
   display: block;
   width: 100%;
@@ -856,7 +856,7 @@ footer.site-footer .wordmark small {
   }
 }
 
-/* Refined monochrome surfaces and decorative circuit geometry. */
+/* 白黒の背景と回路図風の装飾を整えます。 */
 .interface-art {
   position: absolute;
   width: min(36vw, 400px);

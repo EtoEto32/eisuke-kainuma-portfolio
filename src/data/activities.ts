@@ -1,12 +1,28 @@
 import type { EventRecord } from './types'
 
-export const activities = [
+export const conference = {
+  title: '第115回コンピュータセキュリティ合同研究発表会（CSEC）',
+  date: '2026年12月10日〜11日',
+  venue: '下呂交流会館アクティブ（岐阜県下呂市）',
+  url: 'https://www.ipsj.or.jp/kenkyukai/event/eip114spt65csec115.html',
+}
+
+export const publications = [
   {
-    label: 'CONFERENCE',
-    title: 'CSECでの学会発表',
-    description: 'CSECでの学会発表（12月・岐阜）の詳細は、後日掲載します。',
-    status: '詳細は後日掲載',
+    id: 'wasm-obfuscation',
+    title: 'WebAssemblyクリプトジャッキングにおける難読化技術の評価',
+    authors: ['貝沼英亮', '向井宏明'],
+    role: '筆頭著者',
   },
+  {
+    id: 'sandbox-analysis-evasion',
+    title: 'サンドボックスにおける解析回避無効化に関する検討',
+    authors: ['井藤大地', '向井宏明', '貝沼英亮'],
+    role: '共著',
+  },
+]
+
+export const activities = [
   {
     label: 'WRITING',
     title: 'Zenn・ブログでの執筆',

@@ -1,6 +1,7 @@
-import { activities, eventHistory, eventNotes } from '../data'
+import { activities, conference, eventHistory, eventNotes, publications } from '../data'
 import type { EventRecord } from '../data'
 import { ChevronDown } from 'lucide-react'
+import ExternalLink from '../components/ExternalLink'
 
 function EventEntry({ event, recorded = false }: { event: EventRecord; recorded?: boolean }) {
   return (
@@ -85,8 +86,27 @@ export default function ActivityPage() {
         </p>
         <EventList events={eventNotes} recorded />
       </section>
+      <section className="event-section" aria-labelledby="publications-heading">
+        <h2 id="publications-heading">学会発表</h2>
+        <p>{conference.title}での発表を予定しています。</p>
+        <p>
+          {conference.date} ／ {conference.venue}
+        </p>
+        <ExternalLink href={conference.url}>研究発表会の開催案内</ExternalLink>
+        <div className="activity-list">
+          {publications.map((publication) => (
+            <article key={publication.id}>
+              <div>
+                <h3>{publication.title}</h3>
+                <p>著者：{publication.authors.join('、')}</p>
+              </div>
+              <span className="badge sample-badge">{publication.role}・発表予定</span>
+            </article>
+          ))}
+        </div>
+      </section>
       <section className="event-section" aria-labelledby="other-activities-heading">
-        <h2 id="other-activities-heading">学会発表・執筆</h2>
+        <h2 id="other-activities-heading">執筆</h2>
         <div className="activity-list">
           {activities.map((activity) => (
             <article key={activity.label}>
